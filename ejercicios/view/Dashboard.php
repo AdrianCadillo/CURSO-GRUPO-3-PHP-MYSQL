@@ -9,12 +9,13 @@
    
  }
  else{
-  if(isset($_COOKIE['remember']))
+  if(isset($_SESSION['username']))
   {
-    $UserConect = openssl_decrypt($_COOKIE['remember'],"AES-128-ECB","**_");
+    $UserConect = $_SESSION['username'];
+     
   }
   else{
-    $UserConect = $_SESSION['username'];
+    $UserConect = openssl_decrypt($_COOKIE['remember'],"AES-128-ECB","**_"); 
   }
 
  }
@@ -23,3 +24,4 @@
 <h1>Bienvenido al sistema <?php echo $UserConect;?></h1>
 
 <a href="../logout.php">Salir</a>
+<?php echo $_SESSION['username'] ?>
