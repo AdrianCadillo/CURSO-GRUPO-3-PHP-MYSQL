@@ -1,10 +1,8 @@
 <?php 
  session_start();
 
- if(!isset($_SESSION['username']) and !isset($_COOKIE['remember']))
+ if(!isset($_COOKIE['remember']))
  {
-    isset($_SESSION['username'])?session_destroy():'';
-    
     header("location:login_view.php");
    
  }

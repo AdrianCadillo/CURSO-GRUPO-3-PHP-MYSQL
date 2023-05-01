@@ -49,7 +49,7 @@
 </html>
 
 <?php 
- if(isset($_SESSION['username']) || isset($_COOKIE['remember']))
+ if(isset($_COOKIE['remember']))
  {
     header("location:Dashboard.php");
  }
