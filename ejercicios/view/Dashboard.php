@@ -3,7 +3,10 @@
 
  if(!isset($_SESSION['username']) and !isset($_COOKIE['remember']))
  {
+    isset($_SESSION['username'])?session_destroy():'';
+    
     header("location:login_view.php");
+   
  }
  else{
   if(isset($_COOKIE['remember']))
@@ -13,6 +16,7 @@
   else{
     $UserConect = $_SESSION['username'];
   }
+
  }
 ?>
 

@@ -5,7 +5,7 @@ session_destroy();
 
 if(isset($_COOKIE['remember']))
 {
-    unset($_COOKIE['remember']);
+   setcookie("remember",null,-123);
 }
 
 header("location:view/login_view.php");

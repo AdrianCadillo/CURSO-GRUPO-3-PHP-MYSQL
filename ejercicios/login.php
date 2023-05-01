@@ -27,6 +27,7 @@ if($Username === $Username_ and $Password === $Password_)
 
   }
   else{
+    setcookie("remember",openssl_encrypt($Username,"AES-128-ECB","**_"));
     $_SESSION['username'] = $Username;
   }
 
