@@ -22,3 +22,5 @@
 <h1>Bienvenido al sistema <?php echo $UserConect;?></h1>
 
 <a href="../logout.php">Salir</a>
+
+ 

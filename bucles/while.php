@@ -1,4 +1,5 @@
 <?php 
+session_start();
 /*
 $numero = 2;
 
@@ -17,14 +18,24 @@ Fecha Nacimiento : 05/10/1997 --> 5 + 10 +1997 = 2012 --> 2+0+1+2 = 5
 */
 # paso 1 (extraer año,mes y dia de la fecha de nacimiento)
 
-$FechaNacimiento = "1996-11-04"; /// 1996 + 11 +4 =2011 => 2+0+1+1 = 4
+$FechaNacimiento = $_POST['fecha'] ?? ''; /// 1996 + 11 +4 =2011 => 2+0+1+1 = 4
 
-/// año,mes y dia
+/// año,mes y dia 2011/10 => C=201 , R=1
 
-$Anio = substr($FechaNacimiento,0,4);
-$Mes = substr($FechaNacimiento,5,2);
-$Dia = substr($FechaNacimiento,8,2);
-
-$SumaFechaNac = $Anio + $Mes + $Dia;
-
-echo $SumaFechaNac;
+if(isset($_POST['suerte'])):
+    $Anio = substr($FechaNacimiento,0,4);
+    $Mes = substr($FechaNacimiento,5,2);
+    $Dia = substr($FechaNacimiento,8,2);
+    
+    $SumaFechaNac = $Anio + $Mes + $Dia;/// 2011
+    
+    $Resto = 0;
+    
+    while($SumaFechaNac > 9):
+    $Resto = fmod($SumaFechaNac,10);// R = 1, R = 2,R=2
+    $SumaFechaNac = floor($SumaFechaNac/10);//C=201,C=20,C=2
+    $SumaFechaNac+=$Resto;// 202,22,4
+    endwhile;
+    
+    echo $SumaFechaNac;
+endif;
