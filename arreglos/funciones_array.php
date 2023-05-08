@@ -1,65 +1,91 @@
 <?php 
-/*
-$Usuarios = [
-    [
-        "username"=>"adrian@2000",
-        "password"=> 12345,
-        "perfil"=>"Docente"
-    ],
-    [
-        "username"=>"Pedro@2000",
-        "password"=> 1234511,
-        "perfil"=>"Estudiante"
-    ]
+ /*
+$Frutas = ["Piña","Cereza","Pera","Naranja"];
+
+$Fruta1 = ["name"=>"Piña","color"=>"amarillo"];
+
+$Route = ["Producto","delete","34"];
+
+$controlador = "usuario";
+
+$methodo = "editar";
+
+$Estudiante_ = [
+    "codigo"=>"00348243",
+    "nombre"=>"Pedro",
+    "apellidos"=>"Mendoza"
 ];
 
-$json = json_encode(["usuarios"=>$Usuarios]);
+$a = [3,4,5,5,6];
 
-print_r(json_decode($json));
+extract($Estudiante_);
 
+$Comptac = compact("controlador","methodo");
+
+//print_r(array_diff($Frutas,$Fruta1));
+
+list($Controlador,$Methodo,$Parametro) = $Route;
+
+//sort($Frutas);
+
+//print_r($Frutas);
+//echo $codigo;
+//echo $Controlador;
+print_r($Comptac);
 return;
+$Estudiante = [
+"codigo"=>"00348243",
+"nombre"=>"Pedro",
+"apellidos"=>"Mendoza"
+];
 
-echo count($Usuarios) > 0 ? var_dump($Usuarios):'no hay datos';*/
-/*
-$variable = [4,7,8,"adrian"];
+$Estudiante_Keys = array_keys($Estudiante);
 
-if(is_array($variable))
-{
-   print_r($variable);
-}
-else 
-{
-    echo "no eres array";
-}*/
+$Estudiante_key_First = array_key_first($Estudiante);
+
+$Estudiante_Values = array_values($Estudiante);
 
 /*
-$Elemento_Verificar = "Fresa";
+array_push($Frutas,"Mandarina");
+/// realizar un programa aplicando arreglos y funciones arreglos para filtrar los número  
+/// perfectos de una colección de elementos
+array_pop($Frutas); 
+//var_export($Estudiante_Keys[2]);
 
-$Frutas = ["Piña","Sandia","Mandarina","Fresa"];
+//echo $Estudiante_key_First;
+var_dump($Estudiante_Values);*/
 
-if(in_array($Elemento_Verificar,$Frutas))
-{
-    echo "si pertenece";
-}
-else{
 
-    echo "no pertenece";
-}
-*/
+$Router = "/usuario/create";
 
+$Route_ = explode("/",$Router);
+
+//$Route_ = array_filter($Route_);
 /*
-$Url = "usuarios/create";
+$Numeros = [-12,-6,-7,3,4,5,16,-6];
 
-$Url = explode("/",$Url);
+$Numeros_Positivos = array_filter($Numeros,function($number){
+    return $number > 0;
+});
 
-$Controlador = $Url[0]."Controller";
+var_export($Numeros_Positivos);*/
 
-echo $Controlador;*/
+$mascotas = ["gato","perro","loro"];
+$Numeros = [-12,-6,-7,3,4,5,16,-6];
+$Mascotas_Mayuscula = array_map("strtoupper",$mascotas);
 
-$frutas = ['Mango','Lima','Fresa','Higo'];
+$Numero_Multiplicados = array_map(function($number){
+    return $number*5;
+},$Numeros);
 
-$frutas = implode(" - ",$frutas);
+//print_r($Mascotas_Mayuscula);
 
-echo $frutas;
+print_r($Numero_Multiplicados);
+
+ 
 
 
+
+ 
+
+ 
