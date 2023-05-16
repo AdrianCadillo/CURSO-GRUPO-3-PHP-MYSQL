@@ -40,6 +40,14 @@
                     <div class="card-footer border-info">
                         <button class="btn btn-info bg-transparent" name="entrar"><b>Entrar <i class="fas fa-sign-in"></i></b></button>
                     </div>
+                     
+                    <select name="" id="">
+                       <?php  $Paises = ["peru","bolivia","ecuador"]; foreach ($Paises as $item): ?>
+
+                        <option value="" <?php echo $item === 'bolivia'?'selected':''?> ><?php echo $item;?></option>
+                        <?php endforeach;?>
+                    </select>
+
                 </form>
             </div>
             </div>
@@ -49,6 +57,7 @@
 </html>
 
 <?php 
+
  if(isset($_COOKIE['remember']))
  {
     header("location:Dashboard.php");
